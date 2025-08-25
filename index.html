@@ -1,313 +1,353 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Shalyndra’s Freedom Playbook</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
-  <style>
-    body {font-family:'Inter',sans-serif;}
-    /* --- CSS-ONLY TABS --- */
-    .tab-content { display:none; }
-    .tab-content:target { display:block; }
-    body:not(:has(:target)) #tab-why { display:block; } /* default tab */
-    .tab-link { padding:.75rem 1rem; font-weight:600; color:#be185d; border-radius:.5rem; }
-    .tab-link:hover { background:#fce7f3; }
-    body:not(:has(:target)) #nav-why,
-    body:has(#tab-why:target)    #nav-why,
-    body:has(#tab-plan:target)   #nav-plan,
-    body:has(#tab-basics:target) #nav-basics,
-    body:has(#tab-tool:target)   #nav-tool,
-    body:has(#tab-fears:target)  #nav-fears { background:#ec4899; color:#fff; }
-    .card { background:#fff; border:1px solid #f9a8d4; border-radius:14px; }
-    .checklist-item { display:flex; align-items:center; gap:.6rem; margin-top:.6rem; }
-    .checklist-item input { accent-color:#ec4899; width:1.1rem; height:1.1rem; }
-    .growth-bar { height:8px; border-radius:999px; background:#ec4899; }
-    .pill { font-size:12px; background:#fce7f3; color:#be185d; padding:4px 8px; border-radius:999px; }
-  </style>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Shalyndra’s Freedom Playbook</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+<style>
+  body{font-family:'Inter',sans-serif}
+  /* CSS-ONLY TABS */
+  .tab-content{display:none}
+  .tab-content:target{display:block}
+  body:not(:has(:target)) #tab-why{display:block} /* default */
+  .tab-link{padding:.75rem 1rem;font-weight:600;color:#be185d;border-radius:.5rem}
+  .tab-link:hover{background:#fce7f3}
+  /* active highlight (pure CSS) */
+  body:not(:has(:target)) #nav-why,
+  body:has(#tab-why:target)    #nav-why,
+  body:has(#tab-plan:target)   #nav-plan,
+  body:has(#tab-basics:target) #nav-basics,
+  body:has(#tab-tool:target)   #nav-tool,
+  body:has(#tab-fears:target)  #nav-fears{background:#ec4899;color:#fff}
+  .card{background:#fff;border:1px solid #f9a8d4;border-radius:14px}
+  .checklist-item{display:flex;align-items:center;gap:.6rem;margin-top:.6rem}
+  .checklist-item input{accent-color:#ec4899;width:1.1rem;height:1.1rem}
+  .pill{font-size:12px;background:#fce7f3;color:#be185d;padding:4px 8px;border-radius:999px}
+  .growth-bar{height:8px;border-radius:999px;background:#ec4899}
+  .muted{color:#9d174d}
+</style>
 </head>
 <body class="bg-pink-50 text-gray-900">
 
-  <!-- Hero -->
-  <header class="bg-pink-200">
-    <div class="max-w-6xl mx-auto px-6 py-14 text-center">
-      <h1 class="text-4xl md:text-6xl font-extrabold leading-tight text-pink-800 drop-shadow">
-        Shalyndra, Now Is the Time to Invest.
-      </h1>
-      <p class="mt-4 text-lg md:text-xl text-pink-900 max-w-3xl mx-auto">
-        MBA in progress. Range Rover in your vision. We’re in the <span class="font-bold">AI rush</span>—just like the 90’s internet boom. 
-        Small, consistent moves now = future freedom.
+<!-- HERO -->
+<header class="bg-pink-200">
+  <div class="max-w-6xl mx-auto px-6 py-14 text-center">
+    <h1 class="text-4xl md:text-6xl font-extrabold leading-tight text-pink-800 drop-shadow">Shalyndra, Now Is the Time to Invest.</h1>
+    <p class="mt-4 text-lg md:text-xl text-pink-900 max-w-3xl mx-auto">
+      MBA in progress. Range Rover in your vision. We’re in the <b>AI rush</b>—like the 90’s internet boom. Small, consistent moves now = future freedom.
+    </p>
+    <div class="mt-6 flex justify-center gap-3">
+      <a href="#tab-plan" class="bg-pink-600 hover:bg-pink-500 text-white font-bold px-6 py-3 rounded-xl">Start Today</a>
+      <a href="#tab-tool" class="bg-white border border-pink-300 text-pink-700 hover:bg-pink-100 px-6 py-3 rounded-xl font-semibold">Show Me the Shortcut</a>
+    </div>
+  </div>
+</header>
+
+<main class="max-w-6xl mx-auto px-6 pb-24">
+  <!-- NAV -->
+  <nav class="mt-6 border-b border-pink-300 flex flex-wrap items-center justify-center gap-2" aria-label="Sections">
+    <a href="#tab-why" class="tab-link" id="nav-why">Why You, Why Now</a>
+    <a href="#tab-plan" class="tab-link" id="nav-plan">Your 14-Day Plan</a>
+    <a href="#tab-basics" class="tab-link" id="nav-basics">Stock Market 101</a>
+    <a href="#tab-tool" class="tab-link" id="nav-tool">Your Money Engine</a>
+    <a href="#tab-fears" class="tab-link" id="nav-fears">Real Talk</a>
+  </nav>
+
+  <!-- WHY NOW -->
+  <section id="tab-why" class="tab-content mt-8">
+    <div class="card p-6 md:p-8">
+      <h2 class="text-3xl font-bold text-pink-800">Why now (and what this is)</h2>
+      <p class="mt-3 text-lg text-gray-700">
+        This site is your <b>2-week start</b> to investing. You’ll open a brokerage, buy one or two broad ETFs,
+        and automate monthly deposits. In the 90s, people who simply <b>owned the basket</b> rode the internet wave.
+        Today, <b>AI is that wave</b>—chips, cloud, copilots. Your job:
+        <span class="pill">Own the basket</span> <span class="pill">Automate monthly</span> <span class="pill">Let compounding work</span>.
       </p>
-      <div class="mt-6 flex justify-center gap-3">
-        <a href="#tab-plan" class="bg-pink-600 hover:bg-pink-500 text-white font-bold px-6 py-3 rounded-xl">Start Today</a>
-        <a href="#tab-tool" class="bg-white border border-pink-300 text-pink-700 hover:bg-pink-100 px-6 py-3 rounded-xl font-semibold">Show Me the Shortcut</a>
+      <div class="mt-4 text-sm">
+        <span class="font-semibold text-pink-800">Quick beginner videos:</span>
+        <ul class="list-disc list-inside text-gray-700 mt-2">
+          <li><a class="underline decoration-pink-400" target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=ZcfX1fG1GmU">What is an ETF? (Schwab ~3m)</a></li>
+          <li><a class="underline decoration-pink-400" target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=Qq3N7a8lZ8k">Stocks vs ETFs (Fidelity ~5m)</a></li>
+          <li><a class="underline decoration-pink-400" target="_blank" rel="noopener" href="https://www.khanacademy.org/economics-finance-domain/core-finance/stock-and-bonds">Khan Academy: stocks & bonds (basics)</a></li>
+        </ul>
       </div>
     </div>
-  </header>
+  </section>
 
-  <main class="max-w-6xl mx-auto px-6 pb-24">
-    <!-- Nav -->
-    <nav class="mt-6 border-b border-pink-300 flex flex-wrap items-center justify-center gap-2" aria-label="Sections">
-      <a href="#tab-why"    class="tab-link" id="nav-why">Why You, Why Now</a>
-      <a href="#tab-plan"   class="tab-link" id="nav-plan">Your 14-Day Plan</a>
-      <a href="#tab-basics" class="tab-link" id="nav-basics">Stock Market 101</a>
-      <a href="#tab-tool"   class="tab-link" id="nav-tool">Your Money Engine</a>
-      <a href="#tab-fears"  class="tab-link" id="nav-fears">Real Talk</a>
-    </nav>
+  <!-- PLAN -->
+  <section id="tab-plan" class="tab-content mt-8">
+    <div class="card p-6 md:p-8">
+      <h2 class="text-3xl font-bold text-pink-800">Your 14-Day Freedom Plan</h2>
+      <p class="mt-2 text-gray-700">By Day 14, you’ll be invested and automated.</p>
+      <div class="mt-6 grid md:grid-cols-2 gap-6">
+        <div>
+          <h3 class="font-bold text-xl text-pink-700">Week 1 — Foundation</h3>
+          <div class="checklist-item"><input type="checkbox" id="p1"><label for="p1">Open a <a class="underline decoration-pink-400" href="https://www.fidelity.com/open-account/overview" target="_blank" rel="noopener">Fidelity</a> or <a class="underline decoration-pink-400" href="https://www.schwab.com/open-an-account" target="_blank" rel="noopener">Schwab</a> brokerage (Individual).</label></div>
+          <div class="checklist-item"><input type="checkbox" id="p2"><label for="p2">Enable 2-factor auth; verify identity.</label></div>
+          <div class="checklist-item"><input type="checkbox" id="p3"><label for="p3">Link bank account.</label></div>
+          <div class="checklist-item"><input type="checkbox" id="p4"><label for="p4">Set automatic deposit ($50–$200 / month).</label></div>
+        </div>
+        <div>
+          <h3 class="font-bold text-xl text-pink-700">Week 2 — Action</h3>
+          <div class="checklist-item"><input type="checkbox" id="p5"><label for="p5">First buy: <b>VOO</b> (S&P 500) or <b>VTI</b> (total US market).</label></div>
+          <div class="checklist-item"><input type="checkbox" id="p6"><label for="p6">Optional AI tilt: add <b>QQQ</b> or research <b>BOTZ</b>.</label></div>
+          <div class="checklist-item"><input type="checkbox" id="p7"><label for="p7">Turn on dividend reinvestment (DRIP).</label></div>
+          <div class="checklist-item"><input type="checkbox" id="p8"><label for="p8">Write a 2-sentence goal (“MBA + Rover down payment”).</label></div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <!-- WHY NOW -->
-    <section id="tab-why" class="tab-content mt-8">
-      <div class="card p-6 md:p-8">
-        <h2 class="text-3xl font-bold text-pink-800">Why now (and what this is)</h2>
-        <p class="mt-3 text-lg text-gray-700">
-          This page is your <b>2-week start</b> to investing: open an account, buy one or two broad ETFs,
-          and automate monthly deposits. In the 90s, people who owned broad tech rode the internet wave.
-          Today, <b>AI is that wave</b>—chips, cloud, and software are compounding. 
-          Your job: <span class="pill">Own the basket</span> <span class="pill">Automate monthly</span> <span class="pill">Let compounding work</span>.
-        </p>
-        <div class="mt-4 text-sm">
-          <span class="font-semibold text-pink-800">Short beginner videos:</span>
-          <ul class="list-disc list-inside text-gray-700 mt-2">
-            <li><a class="underline decoration-pink-400" target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=ZcfX1fG1GmU">What is an ETF? (Schwab, 3 min)</a></li>
-            <li><a class="underline decoration-pink-400" target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=Qq3N7a8lZ8k">Stocks vs. ETFs for beginners (Fidelity, 5 min)</a></li>
-            <li><a class="underline decoration-pink-400" target="_blank" rel="noopener" href="https://www.khanacademy.org/economics-finance-domain/core-finance/stock-and-bonds">Khan Academy: Stocks & Bonds (basics)</a></li>
+  <!-- BASICS + LIVE YTD -->
+  <section id="tab-basics" class="tab-content mt-8">
+    <div class="card p-6 md:p-8">
+      <h2 class="text-3xl font-bold text-pink-800">Stock Market 101 — Quick & Clear</h2>
+      <div class="grid md:grid-cols-3 gap-4 mt-6">
+        <div class="card p-4">
+          <h3 class="font-semibold text-pink-900">What is it?</h3>
+          <ul class="list-disc list-inside text-sm text-gray-700 mt-2">
+            <li><b>Stock</b> = tiny slice of a company.</li>
+            <li><b>ETF</b> = basket of many stocks (less guesswork).</li>
+            <li><b>Index</b> = S&P 500, Nasdaq-100, etc.</li>
+            <li><b>Fees</b> (expense ratios): VOO/VTI ≈ 0.03%/yr.</li>
+            <li><b>DRIP</b> auto-reinvests dividends.</li>
           </ul>
         </div>
-      </div>
-    </section>
-
-    <!-- PLAN -->
-    <section id="tab-plan" class="tab-content mt-8">
-      <div class="card p-6 md:p-8">
-        <h2 class="text-3xl font-bold text-pink-800">Your 14-Day Freedom Plan</h2>
-        <p class="mt-2 text-gray-700">By Day 14 you’ll be invested and automated.</p>
-        <div class="mt-6 grid md:grid-cols-2 gap-6">
-          <div>
-            <h3 class="font-bold text-xl text-pink-700">Week 1 — Foundation</h3>
-            <div class="checklist-item"><input type="checkbox" id="p1"><label for="p1">Open a <a class="underline decoration-pink-400" href="https://www.fidelity.com/open-account/overview" target="_blank" rel="noopener">Fidelity</a> or <a class="underline decoration-pink-400" href="https://www.schwab.com/open-an-account" target="_blank" rel="noopener">Schwab</a> brokerage (Individual).</label></div>
-            <div class="checklist-item"><input type="checkbox" id="p2"><label for="p2">Enable 2-factor auth; verify identity.</label></div>
-            <div class="checklist-item"><input type="checkbox" id="p3"><label for="p3">Link bank account.</label></div>
-            <div class="checklist-item"><input type="checkbox" id="p4"><label for="p4">Set automatic deposit ($50–$200 / month).</label></div>
-          </div>
-          <div>
-            <h3 class="font-bold text-xl text-pink-700">Week 2 — Action</h3>
-            <div class="checklist-item"><input type="checkbox" id="p5"><label for="p5">First buy: <b>VOO</b> (S&P 500) or <b>VTI</b> (total US market).</label></div>
-            <div class="checklist-item"><input type="checkbox" id="p6"><label for="p6">Optional AI tilt: add <b>QQQ</b> or research <b>BOTZ</b>.</label></div>
-            <div class="checklist-item"><input type="checkbox" id="p7"><label for="p7">Turn on dividend reinvestment (DRIP).</label></div>
-            <div class="checklist-item"><input type="checkbox" id="p8"><label for="p8">Write a 2-sentence goal (“MBA + Rover down payment”).</label></div>
-          </div>
+        <div class="card p-4">
+          <h3 class="font-semibold text-pink-900">’90s Internet → Today’s AI</h3>
+          <p class="text-sm text-gray-700 mt-2">
+            Then: the web went from niche to everywhere; broad tech owners won.  
+            Now: AI is rolling into every industry (chips, cloud, copilots). Own the <b>basket</b> so you don’t have to pick one winner.
+          </p>
+        </div>
+        <div class="card p-4">
+          <h3 class="font-semibold text-pink-900">Starter ETFs (& why)</h3>
+          <ul class="list-disc list-inside text-sm text-gray-700 mt-2">
+            <li><b>VOO</b> — S&P 500 leaders; low-cost core.</li>
+            <li><b>VTI</b> — Entire US market in one fund.</li>
+            <li><b>QQQ</b> — Nasdaq-100 innovators; AI tilt.</li>
+            <li><b>BOTZ</b> — Robotics & AI theme.</li>
+          </ul>
+          <p class="text-xs text-pink-700 mt-2">Core = VOO/VTI. Add QQQ/BOTZ only if you accept bigger swings.</p>
         </div>
       </div>
-    </section>
 
-    <!-- BASICS -->
-    <section id="tab-basics" class="tab-content mt-8">
-      <div class="card p-6 md:p-8">
-        <h2 class="text-3xl font-bold text-pink-800">Stock Market 101 — Quick & Clear</h2>
-        <div class="grid md:grid-cols-3 gap-4 mt-6">
-          <div class="card p-4">
-            <h3 class="font-semibold text-pink-900">What is it?</h3>
-            <ul class="list-disc list-inside text-sm text-gray-700 mt-2">
-              <li><b>Stock</b> = tiny slice of a company.</li>
-              <li><b>ETF</b> = basket of many stocks (less guesswork).</li>
-              <li><b>Index</b> = benchmark list (S&P 500, Nasdaq-100).</li>
-              <li><b>Fees</b> (expense ratios): VOO/VTI ≈ 0.03%/yr.</li>
-              <li><b>DRIP</b>: auto-reinvest dividends to buy more shares.</li>
-            </ul>
-          </div>
-          <div class="card p-4">
-            <h3 class="font-semibold text-pink-900">’90s Internet → Today’s AI</h3>
-            <p class="text-sm text-gray-700 mt-2">
-              Then: the web went from niche to everywhere; broad tech owners won.  
-              Now: AI is rolling into every industry (chips, cloud, copilots). Own the <b>basket</b> so you don’t have to pick one winner.
-            </p>
-          </div>
-          <div class="card p-4">
-            <h3 class="font-semibold text-pink-900">Starter ETFs (& why)</h3>
-            <ul class="list-disc list-inside text-sm text-gray-700 mt-2">
-              <li><b>VOO</b> — S&P 500 leaders; low cost core.</li>
-              <li><b>VTI</b> — Entire US market in one fund.</li>
-              <li><b>QQQ</b> — Nasdaq-100 innovators; AI tilt.</li>
-              <li><b>BOTZ</b> — Robotics & AI niche exposure.</li>
-            </ul>
-            <p class="text-xs text-pink-700 mt-2">Core = VOO/VTI. Add QQQ/BOTZ only if you accept bigger swings.</p>
+      <!-- LIVE 1-YEAR DEMO -->
+      <div class="mt-6 card p-4">
+        <div class="flex flex-wrap items-center justify-between gap-3">
+          <h3 class="font-semibold text-pink-900">If you put in <span id="amtLabel">$1,000</span> on Jan 1 — what would it be today?</h3>
+          <div class="flex items-center gap-2 text-sm">
+            <label class="font-medium">Amount</label>
+            <input id="amt" type="number" min="0" value="1000" class="w-28 p-2 rounded border border-pink-200 bg-white">
+            <button id="editFallback" class="bg-white border border-pink-300 text-pink-700 hover:bg-pink-100 px-3 py-2 rounded hidden">Edit %</button>
           </div>
         </div>
 
-        <!-- 1-YEAR RESULTS (CLEAR + EDITABLE) -->
-        <div class="mt-6 card p-4">
-          <div class="flex flex-wrap items-center justify-between gap-3">
-            <h3 class="font-semibold text-pink-900">If you put in <span id="allInvestLabel">$1,000</span> on Jan 1 — what would it be today?</h3>
-            <div class="flex items-center gap-2 text-sm">
-              <label class="font-medium">Amount</label>
-              <input id="allInvest" type="number" min="0" value="1000" class="w-28 p-2 rounded border border-pink-200 bg-white">
-              <button id="toggleEdit" class="bg-white border border-pink-300 text-pink-700 hover:bg-pink-100 px-3 py-2 rounded">Edit %</button>
-            </div>
-          </div>
+        <div id="ytdNotice" class="text-xs mt-2 text-pink-700"></div>
 
-          <div class="mt-3 overflow-x-auto">
-            <table class="w-full text-sm">
-              <thead>
-                <tr class="text-left text-pink-800">
-                  <th class="py-2">ETF</th>
-                  <th class="py-2">What it owns</th>
-                  <th class="py-2">% change YTD</th>
-                  <th class="py-2">Your $ → today</th>
-                </tr>
-              </thead>
-              <tbody id="ytdBody" class="align-top"></tbody>
-            </table>
-          </div>
-          <p class="text-[11px] text-pink-700 mt-2">Numbers are educational estimates you can edit. Past performance ≠ future results.</p>
+        <div class="mt-3 overflow-x-auto">
+          <table class="w-full text-sm">
+            <thead>
+              <tr class="text-left text-pink-800">
+                <th class="py-2">ETF</th>
+                <th class="py-2">What it owns</th>
+                <th class="py-2">% change YTD</th>
+                <th class="py-2">Your $ → today</th>
+              </tr>
+            </thead>
+            <tbody id="ytdBody" class="align-top"></tbody>
+          </table>
+        </div>
+        <p class="text-[11px] text-pink-700 mt-2">Live numbers come from Yahoo Finance’s chart endpoint (client-side). If blocked, we switch to editable estimates. Past performance ≠ future results.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- MONEY ENGINE -->
+  <section id="tab-tool" class="tab-content mt-8">
+    <div class="card p-6 md:p-8">
+      <h2 class="text-3xl font-bold text-pink-800">Your Money Engine</h2>
+      <p class="text-gray-700">Adjust the sliders — no charts, just clear numbers and Rover goal progress.</p>
+
+      <div class="mt-6 grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div>
+          <label class="block text-sm font-semibold text-pink-800">Initial Investment</label>
+          <input type="range" id="initial" min="0" max="10000" step="100" value="500" class="w-full">
+          <p class="mt-1 text-pink-900" id="initialOut">$500</p>
+        </div>
+        <div>
+          <label class="block text-sm font-semibold text-pink-800">Monthly Contribution</label>
+          <input type="range" id="monthly" min="0" max="2000" step="50" value="200" class="w-full">
+          <p class="mt-1 text-pink-900" id="monthlyOut">$200</p>
+        </div>
+        <div>
+          <label class="block text-sm font-semibold text-pink-800">Years to Grow</label>
+          <input type="range" id="years" min="1" max="30" step="1" value="10" class="w-full">
+          <p class="mt-1 text-pink-900" id="yearsOut">10 years</p>
         </div>
       </div>
-    </section>
 
-    <!-- MONEY ENGINE -->
-    <section id="tab-tool" class="tab-content mt-8">
-      <div class="card p-6 md:p-8">
-        <h2 class="text-3xl font-bold text-pink-800">Your Money Engine</h2>
-        <p class="text-gray-700">Adjust the sliders — no charts, just clear numbers and your Range Rover goal progress.</p>
-
-        <div class="mt-6 grid grid-cols-1 md:grid-cols-3 gap-6">
-          <div>
-            <label class="block text-sm font-semibold text-pink-800">Initial Investment</label>
-            <input type="range" id="initial" min="0" max="10000" step="100" value="500" class="w-full">
-            <p class="mt-1 text-pink-900" id="initialOut">$500</p>
-          </div>
-          <div>
-            <label class="block text-sm font-semibold text-pink-800">Monthly Contribution</label>
-            <input type="range" id="monthly" min="0" max="2000" step="50" value="200" class="w-full">
-            <p class="mt-1 text-pink-900" id="monthlyOut">$200</p>
-          </div>
-          <div>
-            <label class="block text-sm font-semibold text-pink-800">Years to Grow</label>
-            <input type="range" id="years" min="1" max="30" step="1" value="10" class="w-full">
-            <p class="mt-1 text-pink-900" id="yearsOut">10 years</p>
-          </div>
+      <div class="grid sm:grid-cols-2 gap-6 mt-6">
+        <div class="bg-white p-4 rounded-xl text-center border border-pink-200">
+          <p class="text-sm text-pink-700">If left in Savings (0.4%)</p>
+          <p id="savingsTotal" class="text-2xl font-bold text-pink-900">$0</p>
         </div>
-
-        <div class="grid sm:grid-cols-2 gap-6 mt-6">
-          <div class="bg-white p-4 rounded-xl text-center border border-pink-200">
-            <p class="text-sm text-pink-700">If left in Savings (0.4%)</p>
-            <p id="savingsTotal" class="text-2xl font-bold text-pink-900">$0</p>
-          </div>
-          <div class="bg-white p-4 rounded-xl text-center border border-pink-200">
-            <p class="text-sm text-pink-700">If Invested (10% avg)</p>
-            <p id="investTotal" class="text-2xl font-bold text-pink-900">$0</p>
-          </div>
-        </div>
-
-        <div class="mt-6 bg-white p-4 rounded-xl border border-pink-200">
-          <p class="text-sm text-pink-700">Range Rover Goal (~$22,000)</p>
-          <div class="w-full bg-pink-200 rounded-full h-4 mt-2"><div id="goalBar" class="bg-pink-600 h-4 rounded-full text-xs text-white flex items-center justify-center" style="width:0%">0%</div></div>
-          <p id="etaLine" class="mt-3 text-sm text-pink-800"></p>
+        <div class="bg-white p-4 rounded-xl text-center border border-pink-200">
+          <p class="text-sm text-pink-700">If Invested (10% avg)</p>
+          <p id="investTotal" class="text-2xl font-bold text-pink-900">$0</p>
         </div>
       </div>
-    </section>
 
-    <!-- REAL TALK (9 boxes) -->
-    <section id="tab-fears" class="tab-content mt-8">
-      <div class="card p-6 md:p-8">
-        <h2 class="text-3xl font-bold text-pink-800">Real Talk — Questions You’re Probably Thinking</h2>
-        <div class="mt-4 grid md:grid-cols-3 gap-4">
-          <div class="p-4 bg-pink-50 rounded"><p class="font-bold text-pink-700">“I don’t have a lot to start.”</p><p class="text-sm text-gray-700 mt-1">You don’t need a lot. Start with $25–$50/mo and turn on auto-deposit. Habit > amount.</p></div>
-          <div class="p-4 bg-pink-50 rounded"><p class="font-bold text-pink-700">“Isn’t this gambling?”</p><p class="text-sm text-gray-700 mt-1">Single stocks can be. Broad ETFs (VOO/VTI) are diversified ownership of hundreds to thousands of companies.</p></div>
-          <div class="p-4 bg-pink-50 rounded"><p class="font-bold text-pink-700">“What if the market crashes?”</p><p class="text-sm text-gray-700 mt-1">It will dip. Historically it recovers. Keep buying on a schedule—downturns become discounts.</p></div>
-
-          <div class="p-4 bg-pink-50 rounded"><p class="font-bold text-pink-700">“I’m 53—too late?”</p><p class="text-sm text-gray-700 mt-1">No. 10–20 years of compounding is meaningful, especially with monthly contributions.</p></div>
-          <div class="p-4 bg-pink-50 rounded"><p class="font-bold text-pink-700">“Which first—debt or investing?”</p><p class="text-sm text-gray-700 mt-1">Pay minimums; kill high-interest debt ASAP. You can still invest small amounts to build the habit.</p></div>
-          <div class="p-4 bg-pink-50 rounded"><p class="font-bold text-pink-700">“How do I pick?”</p><p class="text-sm text-gray-700 mt-1">Start with one core ETF (VOO or VTI). Add QQQ/BOTZ only if you’re okay with more swings.</p></div>
-
-          <div class="p-4 bg-pink-50 rounded"><p class="font-bold text-pink-700">“Do I need to watch it daily?”</p><p class="text-sm text-gray-700 mt-1">Nope. Set monthly auto-buy and check once a month. Your time is better spent on your MBA.</p></div>
-          <div class="p-4 bg-pink-50 rounded"><p class="font-bold text-pink-700">“What’s the risk?”</p><p class="text-sm text-gray-700 mt-1">Short-term volatility. Manage it with diversification (VOO/VTI) + time in the market.</p></div>
-          <div class="p-4 bg-pink-50 rounded"><p class="font-bold text-pink-700">“What about taxes?”</p><p class="text-sm text-gray-700 mt-1">In a brokerage, you’ll get a 1099 for dividends/realized gains. Long-term holding keeps taxes simpler.</p></div>
-        </div>
+      <div class="mt-6 bg-white p-4 rounded-xl border border-pink-200">
+        <p class="text-sm text-pink-700">Range Rover Goal (~$22,000)</p>
+        <div class="w-full bg-pink-200 rounded-full h-4 mt-2"><div id="goalBar" class="bg-pink-600 h-4 rounded-full text-xs text-white flex items-center justify-center" style="width:0%">0%</div></div>
+        <p id="etaLine" class="mt-3 text-sm text-pink-800"></p>
       </div>
-    </section>
-  </main>
+    </div>
+  </section>
 
-  <!-- Minimal JS: YTD table + Money Engine -->
-  <script>
-    /* -------- 1-YEAR RESULTS TABLE ---------- */
-    // Defaults: editable YTD % estimates. Update anytime.
-    const ASSETS = [
-      {sym:'VOO', name:'S&P 500 leaders', ytd:22},
-      {sym:'VTI', name:'Total US market',  ytd:19},
-      {sym:'QQQ', name:'Nasdaq-100 innovators (AI tilt)', ytd:45},
-      {sym:'BOTZ',name:'Robotics & AI theme', ytd:35}
-    ];
-    const bodyEl = document.getElementById('ytdBody');
-    const amtInput = document.getElementById('allInvest');
-    const amtLabel = document.getElementById('allInvestLabel');
-    const toggleBtn = document.getElementById('toggleEdit');
-    let editMode = false;
+  <!-- REAL TALK (9 boxes) -->
+  <section id="tab-fears" class="tab-content mt-8">
+    <div class="card p-6 md:p-8">
+      <h2 class="text-3xl font-bold text-pink-800">Real Talk — 9 Concerns, Straight Answers</h2>
+      <div class="mt-4 grid md:grid-cols-3 gap-4">
+        <div class="p-4 bg-pink-50 rounded"><p class="font-bold text-pink-700">“I don’t have much.”</p><p class="text-sm text-gray-700 mt-1">Start with $25–$50/mo. Habit beats amount.</p></div>
+        <div class="p-4 bg-pink-50 rounded"><p class="font-bold text-pink-700">“Isn’t it gambling?”</p><p class="text-sm text-gray-700 mt-1">Single stocks can be. Broad ETFs (VOO/VTI) are diversified.</p></div>
+        <div class="p-4 bg-pink-50 rounded"><p class="font-bold text-pink-700">“What if it crashes?”</p><p class="text-sm text-gray-700 mt-1">Markets dip. Historically they recover. Auto-buy turns dips into discounts.</p></div>
+        <div class="p-4 bg-pink-50 rounded"><p class="font-bold text-pink-700">“I’m 53—too late?”</p><p class="text-sm text-gray-700 mt-1">No. 10–20 years of compounding still matters.</p></div>
+        <div class="p-4 bg-pink-50 rounded"><p class="font-bold text-pink-700">“Debt vs investing?”</p><p class="text-sm text-gray-700 mt-1">Pay high-interest debt fast; still invest small to build the habit.</p></div>
+        <div class="p-4 bg-pink-50 rounded"><p class="font-bold text-pink-700">“Which ETF first?”</p><p class="text-sm text-gray-700 mt-1">Start VOO or VTI. Add QQQ/BOTZ only if you accept bigger swings.</p></div>
+        <div class="p-4 bg-pink-50 rounded"><p class="font-bold text-pink-700">“Do I monitor daily?”</p><p class="text-sm text-gray-700 mt-1">No. Automate and check monthly—focus on your MBA.</p></div>
+        <div class="p-4 bg-pink-50 rounded"><p class="font-bold text-pink-700">“What’s the risk?”</p><p class="text-sm text-gray-700 mt-1">Short-term volatility. Mitigate with diversification + time.</p></div>
+        <div class="p-4 bg-pink-50 rounded"><p class="font-bold text-pink-700">“Taxes?”</p><p class="text-sm text-gray-700 mt-1">Brokerage = 1099 for dividends/realized gains. Long-term holding is simpler.</p></div>
+      </div>
+    </div>
+  </section>
+</main>
 
-    function rowHTML(a){
-      const pctCell = editMode
-        ? `<input type="number" step="0.1" class="w-24 p-2 rounded border border-pink-200 bg-white ytd-input" data-sym="${a.sym}" value="${a.ytd}"> %`
-        : `<span class="font-semibold">${a.ytd.toFixed(1)}%</span>`;
-      const nowVal = (+amtInput.value||0) * (1 + a.ytd/100);
-      return `<tr class="border-t border-pink-100">
-        <td class="py-2 font-semibold">${a.sym}</td>
-        <td class="py-2 text-gray-700">${a.name}</td>
-        <td class="py-2">${pctCell}</td>
-        <td class="py-2 font-semibold">$${Math.round(nowVal).toLocaleString()}</td>
-      </tr>`;
-    }
-    function renderTable(){
-      bodyEl.innerHTML = ASSETS.map(rowHTML).join('');
-      amtLabel.textContent = '$' + (+amtInput.value||0).toLocaleString();
-    }
-    function syncYTDInputs(){
-      document.querySelectorAll('.ytd-input').forEach(inp=>{
-        inp.addEventListener('input', ()=>{
-          const a = ASSETS.find(x=>x.sym===inp.dataset.sym);
-          a.ytd = parseFloat(inp.value)||0;
-          renderTable();
-          syncYTDInputs();
-        });
+<!-- JS: Live YTD + Money Engine -->
+<script>
+/* ------------------- LIVE YTD (Yahoo Finance) ------------------ */
+const SYMBOLS = [
+  { sym:'VOO', name:'S&P 500 leaders' },
+  { sym:'VTI', name:'Total US market' },
+  { sym:'QQQ', name:'Nasdaq-100 innovators (AI tilt)' },
+  { sym:'BOTZ', name:'Robotics & AI theme' }
+];
+
+const ytdBody = document.getElementById('ytdBody');
+const amtInput = document.getElementById('amt');
+const amtLabel = document.getElementById('amtLabel');
+const notice = document.getElementById('ytdNotice');
+const editBtn = document.getElementById('editFallback');
+
+let fallbackMode = false; // becomes true if fetch fails anywhere
+let fallbackData = [
+  {sym:'VOO', ytd:22},
+  {sym:'VTI', ytd:19},
+  {sym:'QQQ', ytd:45},
+  {sym:'BOTZ',ytd:35}
+];
+
+function jan1UTC() {
+  const d = new Date();
+  return Date.UTC(d.getUTCFullYear(), 0, 1, 0, 0, 0, 0) / 1000; // seconds
+}
+function fmtMoney(n){ return '$' + Math.round(n).toLocaleString(); }
+function renderRows(rows){
+  const amount = +amtInput.value || 0;
+  ytdBody.innerHTML = rows.map(r=>{
+    const nowVal = amount * (1 + r.ytd/100);
+    const pctCell = fallbackMode
+      ? `<input type="number" step="0.1" class="w-24 p-2 rounded border border-pink-200 bg-white ytd-edit" data-sym="${r.sym}" value="${r.ytd}"> %`
+      : `<span class="font-semibold">${r.ytd.toFixed(1)}%</span>`;
+    const name = SYMBOLS.find(s=>s.sym===r.sym)?.name || '';
+    return `<tr class="border-t border-pink-100">
+      <td class="py-2 font-semibold">${r.sym}</td>
+      <td class="py-2 text-gray-700">${name}</td>
+      <td class="py-2">${pctCell}</td>
+      <td class="py-2 font-semibold">${fmtMoney(nowVal)}</td>
+    </tr>`;
+  }).join('');
+  amtLabel.textContent = fmtMoney(+amtInput.value || 0);
+  if (fallbackMode) {
+    document.querySelectorAll('.ytd-edit').forEach(inp=>{
+      inp.addEventListener('input',()=>{
+        const f = fallbackData.find(x=>x.sym===inp.dataset.sym);
+        f.ytd = parseFloat(inp.value)||0;
+        renderRows(fallbackData);
       });
-    }
-    amtInput.addEventListener('input', ()=>{ renderTable(); syncYTDInputs(); });
-    toggleBtn.addEventListener('click', ()=>{
-      editMode = !editMode;
-      toggleBtn.textContent = editMode ? 'Done' : 'Edit %';
-      renderTable(); syncYTDInputs();
     });
-    // initial render
-    renderTable(); syncYTDInputs();
-
-    /* -------- MONEY ENGINE (compound) ---------- */
-    function compound(P,M,Y,rate){const n=Y*12,r=rate/12;let t=P*Math.pow(1+r,n);t+=r>0?M*((Math.pow(1+r,n)-1)/r):M*n;return t;}
-    function updateEngine(){
-      const P=+document.getElementById('initial').value, M=+document.getElementById('monthly').value, Y=+document.getElementById('years').value;
-      document.getElementById('initialOut').textContent=`$${P}`; document.getElementById('monthlyOut').textContent=`$${M}`; document.getElementById('yearsOut').textContent=`${Y} years`;
-      const s=compound(P,M,Y,0.004), i=compound(P,M,Y,0.10);
-      document.getElementById('savingsTotal').textContent=`$${Math.round(s).toLocaleString()}`;
-      document.getElementById('investTotal').textContent =`$${Math.round(i).toLocaleString()}`;
-      const goal=22000, pct=Math.min(100,Math.round((i/goal)*100)); const bar=document.getElementById('goalBar'); bar.style.width=pct+'%'; bar.textContent=pct+'%';
-      const r=0.10/12,A=(goal+M/r)/(P+M/r),eta=document.getElementById('etaLine');
-      if(i>=goal) eta.textContent='With these settings, your projected balance crosses ~$22k within your chosen timeframe.';
-      else if(P<=0&&M<=0) eta.textContent='Add an initial amount or monthly contribution to start progress.';
-      else if(A>1){const months=Math.ceil(Math.log(A)/Math.log(1+r)); eta.textContent=`At this pace, you’d reach ~$22k in ~${(months/12).toFixed(1)} years (assuming 10% avg).`;}
-      else eta.textContent='You are effectively at goal.';
+  }
+}
+async function fetchYTD(sym){
+  // Yahoo Finance chart API (usually CORS-friendly on GitHub Pages)
+  const url = `https://query1.finance.yahoo.com/v8/finance/chart/${encodeURIComponent(sym)}?range=ytd&interval=1d`;
+  const res = await fetch(url);
+  if (!res.ok) throw new Error('HTTP '+res.status);
+  const json = await res.json();
+  const series = json?.chart?.result?.[0];
+  const closes = series?.indicators?.quote?.[0]?.close || [];
+  const ts = series?.timestamp || [];
+  // Find first valid close on/after Jan 1 and the latest valid close
+  const startEpoch = jan1UTC();
+  let firstIdx = -1;
+  for (let i=0;i<ts.length;i++){
+    if (ts[i] >= startEpoch && closes[i] != null) { firstIdx = i; break; }
+  }
+  const lastIdx = closes.length - 1;
+  if (firstIdx === -1 || lastIdx < 0 || closes[lastIdx] == null) throw new Error('No data');
+  const start = closes[firstIdx];
+  const last = closes[lastIdx];
+  const ytd = ((last - start) / start) * 100;
+  return { sym, ytd };
+}
+async function loadYTD(){
+  try{
+    const rows = [];
+    for (const s of SYMBOLS){
+      const r = await fetchYTD(s.sym);
+      rows.push(r);
     }
-    ['initial','monthly','years'].forEach(id=>document.getElementById(id)?.addEventListener('input',updateEngine));
-    document.addEventListener('DOMContentLoaded',updateEngine);
-  </script>
+    notice.textContent = 'Live YTD pulled from Yahoo Finance.';
+    renderRows(rows);
+  }catch(err){
+    // Fallback to editable estimates
+    fallbackMode = true;
+    editBtn.classList.remove('hidden');
+    notice.innerHTML = 'Live fetch blocked or failed — using editable estimates. <span class="muted">(Click “Edit %” to adjust.)</span>';
+    renderRows(fallbackData);
+    editBtn.addEventListener('click',()=>{
+      // toggle forces re-render but we already show inputs; this keeps UX obvious
+      renderRows(fallbackData);
+    });
+  }
+}
+amtInput.addEventListener('input',()=>{
+  if (fallbackMode) renderRows(fallbackData); // keep in sync
+  else loadYTD(); // recompute $ column with current amount (fast)
+});
+loadYTD();
+
+/* ------------------- MONEY ENGINE ------------------ */
+function compound(P,M,Y,rate){const n=Y*12,r=rate/12;let t=P*Math.pow(1+r,n);t+=r>0?M*((Math.pow(1+r,n)-1)/r):M*n;return t;}
+function updateEngine(){
+  const P=+document.getElementById('initial').value, M=+document.getElementById('monthly').value, Y=+document.getElementById('years').value;
+  document.getElementById('initialOut').textContent=`$${P}`; document.getElementById('monthlyOut').textContent=`$${M}`; document.getElementById('yearsOut').textContent=`${Y} years`;
+  const s=compound(P,M,Y,0.004), i=compound(P,M,Y,0.10);
+  document.getElementById('savingsTotal').textContent=`$${Math.round(s).toLocaleString()}`;
+  document.getElementById('investTotal').textContent =`$${Math.round(i).toLocaleString()}`;
+  const goal=22000, pct=Math.min(100,Math.round((i/goal)*100)); const bar=document.getElementById('goalBar'); bar.style.width=pct+'%'; bar.textContent=pct+'%';
+  const r=0.10/12,A=(goal+M/r)/(P+M/r),eta=document.getElementById('etaLine');
+  if(i>=goal) eta.textContent='With these settings, your projected balance crosses ~$22k within your chosen timeframe.';
+  else if(P<=0&&M<=0) eta.textContent='Add an initial amount or monthly contribution to start progress.';
+  else if(A>1){const months=Math.ceil(Math.log(A)/Math.log(1+r)); eta.textContent=`At this pace, you’d reach ~$22k in ~${(months/12).toFixed(1)} years (assuming 10% avg).`;}
+  else eta.textContent='You are effectively at goal.';
+}
+['initial','monthly','years'].forEach(id=>document.getElementById(id)?.addEventListener('input',updateEngine));
+document.addEventListener('DOMContentLoaded',updateEngine);
+</script>
 </body>
 </html>
-
-  
-       
-     
-            
-
- 
-    
-
-  
-    
- 
